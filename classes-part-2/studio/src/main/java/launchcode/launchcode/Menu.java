@@ -27,6 +27,40 @@ public class Menu {
     public ArrayList<MenuItem> getItems() {
         return items;
     }
+
+    public void addItem(MenuItem newItem){
+        this.items.add(newItem);
+        this.lastUpdated = new Date();
+    }
+
+    public void removeItem(MenuItem newItem){
+        this.items.remove(newItem);
+        lastUpdated = new Date();
+    }
+
+    public void singleItem(int index){
+        if(index >= 0 && index < items.size()) {
+            MenuItem item = items.get(index);
+            item.printMenuItem();
+        } else {
+            System.out.println("Invalid menu Item.");
+
+        }
+    }
+
+    public void printFullMenu(){
+        System.out.println("Full Menu: ");
+        for (int i = 0; i < items.size(); i++) {
+            items.get(i).printMenuItem();
+            System.out.println();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "lastUpdated=" + lastUpdated +
+                "items=" + items;
+    }
 }
 
 

@@ -17,8 +17,20 @@ public class MenuItem {
         this.price = price;
     }
 
+    public double getPrice(){
+        return price;
+    }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public String getCategory(){
+        return category;
     }
 
     public void setCategory(String category) {
@@ -28,5 +40,25 @@ public class MenuItem {
     public void setNew(boolean aNew) {
         isNew = aNew;
     }
+
+    public boolean isNew(){
+        return isNew;
+    }
+
+    public void printMenuItem(){
+        System.out.println("Description: " + description);
+        System.out.println("Price: $"+ price);
+        System.out.println("Category: " + category);
+        System.out.println("New: " + isNew);
+    }
+    @Override
+    public String toString() {
+        return  "Option: " + description + '\n' +
+                "Category: " + category + '\n' +
+                "Recently Updated: " + isNew + "\n" +
+                "Price: $" + price + '\n' +
+                "-*-*-*-*-*-*-*-" + "\n";
+    }
 }
+
 
