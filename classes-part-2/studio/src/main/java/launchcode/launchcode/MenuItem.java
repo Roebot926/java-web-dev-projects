@@ -1,5 +1,7 @@
 package launchcode.launchcode;
 
+import java.util.Objects;
+
 public class MenuItem {
     private double price;
     private String description;
@@ -58,6 +60,19 @@ public class MenuItem {
                 "Recently Updated: " + isNew + "\n" +
                 "Price: $" + price + '\n' +
                 "-*-*-*-*-*-*-*-" + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Double.compare(price, menuItem.price) == 0 && isNew == menuItem.isNew && Objects.equals(description, menuItem.description) && Objects.equals(category, menuItem.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, description, category, isNew);
     }
 }
 
