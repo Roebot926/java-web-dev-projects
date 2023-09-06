@@ -4,7 +4,6 @@ public class CheckBox extends Question{
         super(question, answer);
     }
 
-
     public boolean checkAnswer(String answer){
         String actualAnswer = this.getaAnswer();
             if(answer.equalsIgnoreCase(actualAnswer)){
